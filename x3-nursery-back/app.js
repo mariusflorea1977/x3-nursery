@@ -163,6 +163,10 @@ serverHttp.listen(process.env.PORT, function () {
                 },
                 ''
             )
+            + "\n" +
+            '... - Params. real values: '
+            +
+            JSON.stringify(conf, null, '    ').replace(/\n/g, '\n    ')
             + "\n"
         ).replace(/\n\n$/, '\n')
     );
