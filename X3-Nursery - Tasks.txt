@@ -22,6 +22,9 @@ a. //
     c. ...
         1. Transactional DB script execution as a tool.
         2. Automatic DB schema version upgrade.
+    d. //
+        a. Gestion d'un niveau de log paramétrable ("logLevel" (err/default, warn, info, debug)).
+        b. Gestion des logs dans la DB.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 b. Automatisation des CRUDs.
     a. Back-end.
