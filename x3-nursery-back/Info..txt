@@ -1,0 +1,32 @@
+____________________________________________________________________________________________________
+Prise en main:
+==============
+- ES6:
+    - Travailler avec les objets prototypés.
+    - Travailler avec les classes.
+- Structure de l'arborescence des sources de l'appli. back:
+    - Decription explicative:
+    - Méhode de travail:
+- Gestion de config.:
+- Pourquoi HTTP et non web-sockets:
+- La couche REST:
+- Gestion de la sécurité:
+    - Sécurité HTTPS:
+    - Sécurité JWT:
+- Swagger:
+    - .
+    - .
+    - .
+    - Auth. JWT pour Swagger:
+    - .
+    - .
+    - .
+- La couche de persistance:
+- Gestion globale des erreurs:
+- Les services REST mis en place pour l'app.-shell de  niveau 1:
+	- Services non-protégés par JWT:
+	- Services protégés par JWT:
+- Revue du tableau global:
+    - Démarrage et cycle de vie de l'application:
+- L'app.-shell de niveau 2 (à développer):
+____________________________________________________________________________________________________

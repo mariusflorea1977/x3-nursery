@@ -1,0 +1,18 @@
+{
+//  "devMode": true, // To use in order to switch to dev-mode.
+
+  "defaultPort": 8089,
+
+  "rest": {
+    "logRestRequestsEntries": true
+  },
+
+//  "microprofile": "test-only-health",
+
+//  "checkDbOnAppStart": false,
+  "dbConfig": {
+    "client": "pg",
+//    "connection": "postgres://marius:Manainden77!@localhost/x3-nursery",
+"connection": "postgres://marius:Manainden77!@localhost/x3-nursery"
+  },
+}

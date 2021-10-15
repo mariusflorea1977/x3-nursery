@@ -1,0 +1,37 @@
+{
+  "appLastBuildDate": "2021-09-29T15:27",
+
+  "devMode": false,
+
+  "defaultPort": 8087,
+
+  "scripts": {
+    "start": "node app.js"
+  },
+
+  "security": {
+    "jwt": {
+      // Secrets got using << console.log(require('crypto').randomBytes(64).toString("hex")); >> command.
+      "accessTokenSecret": "224a1c7ecea50e2dafaf19cd1cfd6c4e36cd13161852a7ed921b0e9239863bfbf5f4f6e6783144ab76e49ce22e12b9fa7f687cc6488f710a66ee9a0d836333b3",
+//      "refreshTokenSecret": "b76780d5d083eb6571b10d56986a92ec52f5812230479ec761ae189cf98129eae91943dc7af61fc7ba94f9c78899223f1c47778a0a91171824a9873310273223",
+    }
+  },
+
+  "rest": {
+    "logRestRequestsEntries": false
+  },
+
+  "swaggerBaseUrl": "/doc/api",
+
+  "supportedDbSchemaVersion": 1,
+
+//  "microprofile": "all",   //   <=   "all" is the default value.
+
+  "checkDbOnAppStart": true,
+//  "dbConfig": {
+//    "client": "pg",
+//    "connection": "postgres://<user>:<pwd.>@<host>/<DB name>"
+//  },
+
+  "currentLanguage" : "FR"
+}

@@ -1,0 +1,125 @@
+____________________________________________________________________________________________________
+Création du fichier "package.json":
+===================================
+
+A l'aide de la commande << npm view <module> versions >>, on peut connaître les versions disponibles d'un module npm donné.
+
+Ainsi, on choisit la dernière (ou la dernière qui marche) version des modules initiaux à inclure dans "package.json", et le résultat est le suivant:
+
+<<
+{
+  "name": "x3-nursery-back-end",
+  "version": "0.0.1",
+  "main": "app.js",
+  "dependencies": {
+    "config": "3.3.0",
+    "cors": "2.8.5",
+    "express": "4.7.1",
+    "express-jwt": "5.3.1",
+    "express-jwt-blacklist": "1.1.0",
+    "express-query-int": "3.0.0",
+    "express-request-language": "1.1.15",
+    "http-status-codes": "1.4.0",
+    "knex": "0.20.11",
+    "pg": "7.18.2",
+    "swagger-ui-express": "3.0.8",
+    "underscore": "1.9.2"
+  }
+}
+>>
+____________________________________________________________________________________________________
+Création du projet WebStorm:
+============================
+
+On ouvre tout simplement avec WebStorm le répertoire où on a créé le fichier "package.json".
+Ceci a pour effet de créer le répertoire du projet: ".idea".
+____________________________________________________________________________________________________
+Mise en place de la gestion de conf.:       => ¶¶¶¶¶¶¶ FAIT - DOC. À COMPLÉTER ICI ¶¶¶¶¶¶¶
+=====================================
+¶
+____________________________________________________________________________________________________
+Mise en place du serveur web:       => ¶¶¶¶¶¶¶ FAIT - DOC. À COMPLÉTER ICI ¶¶¶¶¶¶¶
+=============================
+¶
+____________________________________________________________________________________________________
+Création des services non-sécurisés:       => ¶¶¶¶¶¶¶ FAIT - DOC. À COMPLÉTER ICI ¶¶¶¶¶¶¶
+====================================
+¶
+____________________________________________________________________________________________________
+Mise en place de swagger:       => ¶¶¶¶¶¶¶ FAIT - DOC. À COMPLÉTER ICI ¶¶¶¶¶¶¶
+=========================
+¶
+____________________________________________________________________________________________________
+Mise en place du support de requêtes CORS:       => ¶¶¶¶¶¶¶ FAIT - DOC. À COMPLÉTER ICI ¶¶¶¶¶¶¶
+==========================================
+¶
+____________________________________________________________________________________________________
+Mise en place de l'authentification via JWT:       => ¶¶¶¶¶¶¶ FAIT - DOC. À COMPLÉTER ICI ¶¶¶¶¶¶¶
+============================================
+¶
+____________________________________________________________________________________________________
+Mise en place de l'authentification pour swagger:       => ¶¶¶¶¶¶¶ FAIT - DOC. À COMPLÉTER ICI ¶¶¶¶¶¶¶
+=================================================
+
+L'auth. via Swagger ne semble pas marcher.
+On utilise un palliatif.
+On crée AUTOMATIQUEMENT un param. optionnel dans la requête HTTP pour chaque end-point sécurisé (<< /x3-nursery/api/secured/.../1.0 >>.
+Ce param s'appelle "token", et est un param. de type "query", i.e. fourni dans l'URL après le symbole "?".
+Sa valeur doit être celle retournée pas l'API de login (<< /x3-nursery/api/free/jwt/get/1.0 >>).
+____________________________________________________________________________________________________
+Création du service "health/secure" (sécurisé):       => ¶¶¶¶¶¶¶ FAIT - DOC. À COMPLÉTER ICI ¶¶¶¶¶¶¶
+===============================================
+¶
+____________________________________________________________________________________________________
+Mise en place du logger:       => ¶¶¶¶¶¶¶ POUR L'INSTANT, IL Y A UN FAUX LOGGER, QUI LOGUE UNIQUEMENT DANS LA CONSOLE ¶¶¶¶¶¶¶
+========================
+¶
+____________________________________________________________________________________________________
+Mise en place de la gestion des erreurs:       => ¶¶¶¶¶¶¶ FAIT (BASIQUE (sans gestion de call-stack)) - DOC. À COMPLÉTER ICI ¶¶¶¶¶¶¶
+========================================
+¶
+____________________________________________________________________________________________________
+Mise en place de la connexion à la DB:       => ¶¶¶¶¶¶¶ FAIT - DOC. À COMPLÉTER ICI ¶¶¶¶¶¶¶
+======================================
+¶
+____________________________________________________________________________________________________
+Mise en place de la reconnaissance de version de schéma de DB:       => ¶¶¶¶¶¶¶ FAIT - DOC. À COMPLÉTER ICI ¶¶¶¶¶¶¶
+==============================================================
+¶
+____________________________________________________________________________________________________
+____________________________________________________________________________________________________
+____________________________________________________________________________________________________
+*************************
+*************************
+** APP.-SHELL NIVEAU 2 **
+*************************
+*************************
+____________________________________________________________________________________________________
+Gestion internationalisée des libellés et autres textes:       => ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶ A FAIRE ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶
+========================================================
+Module "text.js"
+
+Il faut faire un WS qui retourne le texte en fonction d'une clé/id. (qui est le texte en anglais) et d'un code-langue.
+____________________________________________________________________________________________________
+Gestion des thèmes:       => ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶ A FAIRE ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶
+========================================================
+Les thèmes disponibles doivent être stockés dans un fichier de config. et un WS doit être dédié à les envoyer au front.
+Il doit être paramétré un thème par défaut dans les params. stockés dans la DB.
+Un thème doit être associé dynamiquement (paramétrage dans la DB) à un utilisateur et à une organisation,
+celui de l'utilisateur, s'il est spécifiquement défini, orerridant celui de l'organisation à laquelle il appartient.
+
+Un utilisateur doit pouvoir changer le thème pour lui depuis le front (opération persistée dans la DB),
+et également pour son organisation s'il en est admin. (opération persistée dans la DB).
+Le super-admin. doit pouvoir changer les thèmes de n'importe quel utilisateur et/ou organisation,
+y compris le sien et le thème par défaut bien évidemment
+opérations persistées dans la DB.
+____________________________________________________________________________________________________
+Gestion, dans le back, de config. spécifique pour le front, pour chaque d'organisation et, éventuellement, pour chaque user:       => ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶ A FAIRE ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶
+============================================================================================================================
+Gestion, dans le back, de config. spécifique pour le front, pour chaque compte d'organisation et, éventuellement, pour chaque user,
+config à envoyer au front sur connexion d'un user, et que le front devra utiliser pour overrider sa config. statique en cours.
+____________________________________________________________________________________________________
+Gestion des organisations, users et rôles:       => ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶ A FAIRE ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶ ¶¶¶¶¶¶¶
+==========================================
+¶
+____________________________________________________________________________________________________
